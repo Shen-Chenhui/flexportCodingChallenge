@@ -1,4 +1,4 @@
-id,name,company_id,created_at,updated_at,international_transportation_mode,international_department_date
+id,name,company_id,created_at,updated_at,international_transportation_mode,international_departure_date
 1,yalmart apparel from china,2,2016-01-14 01:38:29',2016-01-14 01:38:29',ocean,2015-01-01
 2,yalmart apparel from china,2,2016-01-14 01:38:29',2016-01-14 01:38:29',ocean,2015-01-03
 3,yalmart apparel from mexico,2,2016-01-14 01:38:29',2016-01-14 01:38:29',truck,2015-01-02
