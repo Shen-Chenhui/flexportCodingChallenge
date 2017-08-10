@@ -77,10 +77,18 @@ app.get('/api/v1/shipments', async (req, res) => {
       })
     );
 
-    // Sort / Paginate records
+    // Sort / Filter / Paginate records
     if (req.query.sort) {
       records = records.sort((a,b) => (req.query.direction === 'desc' ? -1 : 1) * (a[req.query.sort] < b[req.query.sort] ? -1 : 1));
     }
+
+    if (req.query.international_transportation_mode) {
+      records = records.filter(record => record.international_transportation_mode === req.query.international_transportation_mode);
+    }
+
+    const page = parseInt(req.query.page || 1);
+    const per = parseInt(req.query.per || 4);
+    records = records.slice((page-1)*per, page*per);
 
     res.json({ records });
   } catch (err) {
